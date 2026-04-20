@@ -18,12 +18,25 @@ export function usePoolMusic() {
     const audio = new Audio(SONG_PATH);
     audio.loop        = true;
     audio.volume      = 0.65;
-    audio.currentTime = START_TIME;   // empieza desde el segundo indicado
+    
+    // Esperar a que cargue la info para asignar el tiempo correctamente (Safari/iOS es delicado con esto)
+    audio.addEventListener('loadedmetadata', () => {
+      if (audio.currentTime < START_TIME) {
+        audio.currentTime = START_TIME;
+      }
+    });
+
     audioRef.current  = audio;
 
     audio.addEventListener('play',  () => setIsPlaying(true));
     audio.addEventListener('pause', () => setIsPlaying(false));
     audio.addEventListener('ended', () => setIsPlaying(false));
+
+    // Intentar auto-reproducir inmediatamente que se crea el reproductor
+    audio.play().catch(() => {
+      // Si el navegador (Chrome/Safari) lo bloquea por políticas de interacción, no pasa nada, 
+      // lo iniciará el usuario con el primer tap en la pantalla
+    });
 
     return () => {
       audio.pause();

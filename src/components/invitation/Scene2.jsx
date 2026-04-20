@@ -131,29 +131,29 @@ const Scene2 = () => (
       </div>
 
       {/* Personas */}
-      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '6px', marginTop: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: 'clamp(4px, 2vw, 8px)', marginTop: '8px', transform: 'scale(0.95)' }}>
 
         {/* Adulto */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
           {/* Cabeza */}
           <div style={{
-            width: '26px', height: '26px', borderRadius: '50%',
+            width: 'clamp(20px, 6vw, 26px)', height: 'clamp(20px, 6vw, 26px)', borderRadius: '50%',
             background: 'rgba(255,255,255,0.9)',
             border: '2px solid rgba(255,209,102,0.8)',
           }} />
           {/* Cuerpo */}
           <div style={{
-            width: '36px', height: '44px',
+            width: 'clamp(28px, 8vw, 36px)', height: 'clamp(34px, 10vw, 44px)',
             background: 'rgba(255,255,255,0.85)',
             borderRadius: '10px 10px 6px 6px',
             border: '2px solid rgba(255,209,102,0.6)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>🏊</span>
+            <span style={{ fontSize: 'clamp(1rem, 3.5vw, 1.2rem)', lineHeight: 1 }}>🏊</span>
           </div>
           <span style={{
             fontFamily: 'var(--font-primary)', fontWeight: 700,
-            fontSize: '0.7rem', color: 'rgba(255,255,255,0.9)',
+            fontSize: 'clamp(0.6rem, 2vw, 0.7rem)', color: 'rgba(255,255,255,0.9)',
             textTransform: 'uppercase', letterSpacing: '1px',
           }}>Adulto</span>
         </div>
@@ -161,8 +161,8 @@ const Scene2 = () => (
         {/* Signo + */}
         <div style={{
           fontFamily: "'Bangers', cursive",
-          fontSize: '1.8rem', color: '#FFD166',
-          lineHeight: 1, paddingBottom: '28px',
+          fontSize: 'clamp(1.4rem, 5vw, 1.8rem)', color: '#FFD166',
+          lineHeight: 1, paddingBottom: 'clamp(20px, 6vw, 28px)',
           textShadow: '0 2px 8px rgba(0,0,0,0.3)',
         }}>+</div>
 
@@ -170,23 +170,23 @@ const Scene2 = () => (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
           {/* Cabeza */}
           <div style={{
-            width: '20px', height: '20px', borderRadius: '50%',
+            width: 'clamp(14px, 4.5vw, 20px)', height: 'clamp(14px, 4.5vw, 20px)', borderRadius: '50%',
             background: 'rgba(255,255,255,0.9)',
             border: '2px solid rgba(100,200,255,0.9)',
           }} />
           {/* Cuerpo */}
           <div style={{
-            width: '28px', height: '34px',
+            width: 'clamp(22px, 6.5vw, 28px)', height: 'clamp(26px, 8vw, 34px)',
             background: 'rgba(255,255,255,0.85)',
             borderRadius: '8px 8px 5px 5px',
             border: '2px solid rgba(100,200,255,0.7)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <span style={{ fontSize: '0.9rem', lineHeight: 1 }}>🤽</span>
+            <span style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.9rem)', lineHeight: 1 }}>🤽</span>
           </div>
           <span style={{
             fontFamily: 'var(--font-primary)', fontWeight: 700,
-            fontSize: '0.7rem', color: 'rgba(255,255,255,0.9)',
+            fontSize: 'clamp(0.6rem, 2vw, 0.7rem)', color: 'rgba(255,255,255,0.9)',
             textTransform: 'uppercase', letterSpacing: '1px',
           }}>Niño</span>
         </div>

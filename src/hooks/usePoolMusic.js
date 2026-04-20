@@ -46,12 +46,15 @@ export function usePoolMusic() {
 
   /* ── Controles ── */
   const start = useCallback(() => {
-    if (audioRef.current && audioRef.current.currentTime < START_TIME) {
-      audioRef.current.currentTime = START_TIME; // por si el audio se reinició
+    if (audioRef.current) {
+      // Forzar el inicio en el segundo 25 cada vez que iniciamos si el tiempo actual es menor
+      if (audioRef.current.currentTime < START_TIME) {
+        audioRef.current.currentTime = START_TIME;
+      }
+      audioRef.current.play().catch(() => {
+        // Bloqueado hasta interacción del usuario
+      });
     }
-    audioRef.current?.play().catch(() => {
-      // Algunos browsers bloquean autoplay sin interacción del usuario — ignorar.
-    });
   }, []);
 
   const stop = useCallback(() => {

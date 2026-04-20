@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Dancing+Script:wght@700&family=Fredoka:wght@400;600;700&family=Pacifico&display=swap');
+
+:root {
+  /* Colors */
+  --color-sky: #87CDED;
+  --color-pink: #FF6B9E;
+  --color-yellow: #FFD166;
+  --color-green: #06D6A0;
+  --color-white: #FFFFFF;
+  --color-text: #2f2f2f;
+  
+  --color-water-1: #0093E9;
+  --color-water-2: #80D0C7;
+  
+  /* Typography */
+  --font-primary: 'Fredoka', sans-serif;
+  --font-accent: 'Pacifico', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-sky);
+  color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Utility Classes */
+.text-accent {
+  font-family: var(--font-accent);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

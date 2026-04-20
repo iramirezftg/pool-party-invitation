@@ -55,7 +55,17 @@ const Invitation = () => {
   return (
     <div
       onClick={(e) => { handleBgClick(e); handleFirstInteraction(); }}
-      style={{ position:'relative', width:'100%', height:'100%', overflow:'hidden', cursor:'crosshair' }}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        height: '100dvh',
+        overflow: 'hidden',
+        cursor: 'crosshair',
+        /* Safe area para iPhones con notch / Dynamic Island */
+        paddingTop: 'env(safe-area-inset-top)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+      }}
     >
       {/* Pool background */}
       <PoolBackground />

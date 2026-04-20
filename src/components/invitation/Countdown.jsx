@@ -20,16 +20,16 @@ const Digit = ({ value, label }) => {
   const display = String(value).padStart(2, '0');
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
       <div
         style={{
           position: 'relative',
-          width: 'clamp(52px, 14vw, 66px)',
-          height: 'clamp(52px, 14vw, 66px)',
+          width: 'clamp(44px, 12vw, 62px)',
+          height: 'clamp(44px, 12vw, 62px)',
           background: 'rgba(255,255,255,0.18)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
-          borderRadius: '14px',
+          borderRadius: '12px',
           border: '1.5px solid rgba(255,255,255,0.45)',
           boxShadow: '0 4px 18px rgba(0,80,180,0.28)',
           overflow: 'hidden',
@@ -41,13 +41,13 @@ const Digit = ({ value, label }) => {
         <AnimatePresence mode="popLayout">
           <motion.span
             key={display}
-            initial={{ y: -30, opacity: 0 }}
+            initial={{ y: -28, opacity: 0 }}
             animate={{ y: 0,   opacity: 1 }}
-            exit={{    y:  30, opacity: 0 }}
+            exit={{    y:  28, opacity: 0 }}
             transition={{ type: 'spring', stiffness: 260, damping: 20 }}
             style={{
               fontFamily: "'Bangers', cursive",
-              fontSize: 'clamp(1.7rem, 6vw, 2.2rem)',
+              fontSize: 'clamp(1.4rem, 5vw, 2rem)',
               color: '#fff',
               letterSpacing: '2px',
               textShadow: '0 2px 8px rgba(0,0,0,0.35)',
@@ -64,10 +64,10 @@ const Digit = ({ value, label }) => {
         style={{
           fontFamily: "'Fredoka', sans-serif",
           fontWeight: 600,
-          fontSize: 'clamp(0.6rem, 2.5vw, 0.75rem)',
+          fontSize: 'clamp(0.55rem, 2vw, 0.72rem)',
           color: 'rgba(255,255,255,0.82)',
           textTransform: 'uppercase',
-          letterSpacing: '1.5px',
+          letterSpacing: '1px',
         }}
       >
         {label}

@@ -94,6 +94,118 @@ const Scene2 = () => (
     <InfoRow icon="⏰" label="Hora" value="3:00 PM" />
     <InfoRow icon="📍" label="Lugar" value="La Vaperia" />
 
+    {/* ── Pase de entrada ── */}
+    <motion.div
+      variants={slideUp}
+      style={{
+        width: '100%',
+        background: 'linear-gradient(135deg, rgba(255,209,102,0.18) 0%, rgba(0,140,255,0.22) 100%)',
+        border: '2px dashed rgba(255,209,102,0.7)',
+        borderRadius: '18px',
+        padding: '12px 16px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '8px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {/* Etiqueta flotante */}
+      <div style={{
+        position: 'absolute',
+        top: '8px',
+        right: '10px',
+        background: 'rgba(255,209,102,0.25)',
+        border: '1px solid rgba(255,209,102,0.5)',
+        borderRadius: '20px',
+        padding: '2px 10px',
+        fontFamily: 'var(--font-primary)',
+        fontWeight: 700,
+        fontSize: '0.65rem',
+        color: '#FFD166',
+        textTransform: 'uppercase',
+        letterSpacing: '1.5px',
+      }}>
+        🎟️ Entrada
+      </div>
+
+      {/* Personas */}
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '6px', marginTop: '8px' }}>
+
+        {/* Adulto */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
+          {/* Cabeza */}
+          <div style={{
+            width: '26px', height: '26px', borderRadius: '50%',
+            background: 'rgba(255,255,255,0.9)',
+            border: '2px solid rgba(255,209,102,0.8)',
+          }} />
+          {/* Cuerpo */}
+          <div style={{
+            width: '36px', height: '44px',
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: '10px 10px 6px 6px',
+            border: '2px solid rgba(255,209,102,0.6)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>🏊</span>
+          </div>
+          <span style={{
+            fontFamily: 'var(--font-primary)', fontWeight: 700,
+            fontSize: '0.7rem', color: 'rgba(255,255,255,0.9)',
+            textTransform: 'uppercase', letterSpacing: '1px',
+          }}>Adulto</span>
+        </div>
+
+        {/* Signo + */}
+        <div style={{
+          fontFamily: "'Bangers', cursive",
+          fontSize: '1.8rem', color: '#FFD166',
+          lineHeight: 1, paddingBottom: '28px',
+          textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+        }}>+</div>
+
+        {/* Niño */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}>
+          {/* Cabeza */}
+          <div style={{
+            width: '20px', height: '20px', borderRadius: '50%',
+            background: 'rgba(255,255,255,0.9)',
+            border: '2px solid rgba(100,200,255,0.9)',
+          }} />
+          {/* Cuerpo */}
+          <div style={{
+            width: '28px', height: '34px',
+            background: 'rgba(255,255,255,0.85)',
+            borderRadius: '8px 8px 5px 5px',
+            border: '2px solid rgba(100,200,255,0.7)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <span style={{ fontSize: '0.9rem', lineHeight: 1 }}>🤽</span>
+          </div>
+          <span style={{
+            fontFamily: 'var(--font-primary)', fontWeight: 700,
+            fontSize: '0.7rem', color: 'rgba(255,255,255,0.9)',
+            textTransform: 'uppercase', letterSpacing: '1px',
+          }}>Niño</span>
+        </div>
+      </div>
+
+      {/* Texto aclaratorio */}
+      <p style={{
+        fontFamily: 'var(--font-primary)', fontWeight: 600,
+        fontSize: 'clamp(0.75rem, 3vw, 0.85rem)',
+        color: 'rgba(255,255,255,0.8)',
+        textAlign: 'center',
+        margin: 0,
+        lineHeight: 1.3,
+      }}>
+        Esta invitación es válida para<br />
+        <span style={{ color: '#FFD166', fontWeight: 700 }}>1 adulto + 1 niño</span>
+      </p>
+    </motion.div>
+
     {/* ── Countdown ── */}
     <motion.div variants={slideUp} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
       <Countdown />
